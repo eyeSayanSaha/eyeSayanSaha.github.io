@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sayan Saha — Product Manager specializing in AI-enabled fintech platforms, MSME lending infrastructure, and API ecosystems.">
+<title>Sayan Saha — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#07111F;
+  --surface:#0D1B2E;
+  --surface-2:#132238;
+  --border:#1C2F48;
+  --accent:#E9A332;
+  --accent-dim:#B07820;
+  --text:#EEF2FF;
+  --muted:#6B8EAE;
+  --subtle:#2C4260;
+  --green:#22C98A;
+  --blue:#60A5FA;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 5%;
+  background:rgba(7,17,31,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:.5px solid var(--border);
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;
+  letter-spacing:-.01em;color:var(--text);text-decoration:none;
+}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);
+  font-size:.85rem;letter-spacing:.02em;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.5rem 1.25rem;
+  background:transparent;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  text-decoration:none;
+  font-size:.78rem;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  border-radius:2px;
+  transition:all .2s;
+}
+.nav-cta:hover{background:var(--accent);color:var(--bg)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:8rem 5% 4rem;
+  position:relative;overflow:hidden;
+}
+.hero-grid-bg{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:60px 60px;opacity:.25;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 80%);
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--accent);font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.hero-label::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+h1.hero-name{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:1;letter-spacing:-.03em;
+  color:var(--text);margin-bottom:.2rem;
+}
+h1.hero-name span{color:var(--accent)}
+.hero-tagline{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1rem,2.2vw,1.4rem);
+  font-weight:400;color:var(--muted);
+  margin-bottom:1.5rem;letter-spacing:-.01em;
+}
+.hero-desc{
+  max-width:540px;color:var(--muted);
+  font-size:1rem;line-height:1.8;margin-bottom:2.5rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 2rem;background:var(--accent);
+  color:#07111F;text-decoration:none;
+  font-size:.875rem;font-weight:600;
+  letter-spacing:.03em;border-radius:3px;
+  transition:all .2s;
+}
+.btn-primary:hover{background:var(--accent-dim);transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.875rem 2rem;background:transparent;
+  border:1px solid var(--border);color:var(--text);
+  text-decoration:none;font-size:.875rem;
+  border-radius:3px;transition:all .2s;
+}
+.btn-secondary:hover{border-color:var(--muted);transform:translateY(-1px)}
+
+/* STATS */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);border-left:1px solid var(--border);
+  max-width:700px;
+}
+.stat{
+  padding:1.25rem 1.5rem;
+  border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.stat-val{
+  font-family:'Syne',sans-serif;font-size:1.5rem;
+  font-weight:700;color:var(--text);
+  letter-spacing:-.02em;line-height:1;
+}
+.stat-val span{color:var(--accent)}
+.stat-label{font-size:.7rem;color:var(--muted);margin-top:.3rem;text-transform:uppercase;letter-spacing:.07em}
+
+/* ── SECTIONS ── */
+section{padding:5rem 5%}
+.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:'Syne',sans-serif;font-size:.72rem;color:var(--accent);font-weight:600;letter-spacing:.1em}
+.section-line{width:36px;height:1px;background:var(--border)}
+h2.section-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.4rem,2.8vw,2.1rem);
+  font-weight:700;color:var(--text);letter-spacing:-.02em;
+}
+
+/* ── ABOUT ── */
+#about{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
+.about-text p strong{color:var(--text);font-weight:500}
+.about-highlights{display:flex;flex-direction:column;gap:1rem}
+.highlight-card{
+  padding:1.25rem;background:var(--surface-2);
+  border:1px solid var(--border);border-radius:4px;
+  border-left:3px solid var(--accent);
+}
+.highlight-card h4{font-family:'Syne',sans-serif;font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.highlight-card p{font-size:.8rem;color:var(--muted);line-height:1.55}
+
+/* ── EXPERIENCE ── */
+.exp-timeline{display:flex;flex-direction:column;gap:0}
+.exp-item{
+  display:grid;grid-template-columns:190px 1fr;
+  gap:2rem;position:relative;padding-bottom:2.5rem;
+}
+.exp-item:not(:last-child)::before{
+  content:'';position:absolute;
+  left:190px;top:.6rem;bottom:0;width:1px;
+  background:var(--border);
+}
+.exp-date{padding-top:.25rem;text-align:right}
+.exp-date-label{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+.exp-date-loc{font-size:.68rem;color:var(--subtle);margin-top:.25rem}
+.exp-content{padding-left:2.5rem;position:relative}
+.exp-content::before{
+  content:'';position:absolute;left:-1px;top:.6rem;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--accent);border:2px solid var(--bg);z-index:1;
+}
+.exp-content h3{
+  font-family:'Syne',sans-serif;font-size:1.05rem;
+  font-weight:600;color:var(--text);margin-bottom:.3rem;
+}
+.exp-co-tag{
+  display:inline-block;font-size:.7rem;color:var(--accent);
+  background:rgba(233,163,50,.1);
+  border:1px solid rgba(233,163,50,.2);
+  padding:.15rem .6rem;border-radius:2px;
+  margin-bottom:.875rem;font-weight:500;letter-spacing:.05em;
+}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.exp-bullets li{
+  font-size:.855rem;color:var(--muted);
+  padding-left:1.2rem;position:relative;line-height:1.6;
+}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--subtle)}
+.exp-bullets li strong{color:var(--text);font-weight:500}
+
+/* ── PROJECTS ── */
+#projects{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.projects-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+}
+.project-card{
+  background:var(--bg);padding:2rem;
+  transition:background .2s;position:relative;overflow:hidden;
+}
+.project-card:hover{background:var(--surface-2)}
+.project-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.project-card:hover::after{opacity:1}
+.project-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1rem;
+}
+.project-num{font-size:.65rem;color:var(--subtle);letter-spacing:.06em;font-family:'Syne',sans-serif}
+.badge{
+  display:inline-block;font-size:.6rem;letter-spacing:.08em;
+  padding:.15rem .55rem;border-radius:2px;font-weight:600;text-transform:uppercase;
+}
+.badge-live{background:rgba(34,201,138,.12);color:#22C98A;border:1px solid rgba(34,201,138,.3)}
+.badge-concept{background:rgba(96,165,250,.12);color:#60A5FA;border:1px solid rgba(96,165,250,.25)}
+.project-card h3{
+  font-family:'Syne',sans-serif;font-size:.975rem;
+  font-weight:700;color:var(--text);margin-bottom:.75rem;line-height:1.35;
+}
+.project-card p{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:1.25rem}
+.project-metrics{display:flex;gap:1.25rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.metric{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--accent)}
+.metric small{
+  display:block;font-family:'DM Sans',sans-serif;
+  font-size:.62rem;color:var(--muted);font-weight:400;
+  margin-top:.1rem;letter-spacing:.06em;text-transform:uppercase;
+}
+.project-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{
+  font-size:.62rem;padding:.2rem .5rem;
+  background:var(--surface-2);border:1px solid var(--border);
+  color:var(--muted);border-radius:2px;letter-spacing:.03em;
+}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.skill-group{
+  padding:1.5rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:4px;
+}
+.skill-group-title{
+  font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--accent);font-weight:600;margin-bottom:1rem;
+}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-pill{
+  font-size:.75rem;padding:.3rem .75rem;
+  background:var(--surface-2);border:1px solid var(--border);
+  color:var(--text);border-radius:2px;
+}
+
+/* ── EDUCATION ── */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.edu-card{
+  padding:2rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:4px;
+}
+.edu-degree{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.edu-school{font-size:.875rem;color:var(--accent);margin-bottom:.5rem;font-weight:500}
+.edu-year{font-size:.75rem;color:var(--muted);line-height:1.5}
+
+/* ── AWARDS ── */
+.awards-row{display:flex;flex-wrap:wrap;gap:1rem}
+.award-pill{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.75rem 1.25rem;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:3px;
+}
+.award-icon{font-size:1rem}
+.award-text{font-size:.8rem;color:var(--muted)}
+.award-text strong{color:var(--text);font-weight:500;display:block;font-size:.825rem}
+
+/* ── CONTACT ── */
+#contact{background:var(--surface);border-top:1px solid var(--border);text-align:center}
+.contact-inner{max-width:600px;margin:0 auto}
+.contact-inner h2{
+  font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:800;letter-spacing:-.03em;color:var(--text);margin-bottom:1rem;
+}
+.contact-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem;max-width:440px;margin-left:auto;margin-right:auto}
+.contact-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem}
+.contact-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s;
+}
+.contact-link:hover{color:var(--text)}
+.contact-link svg{width:15px;height:15px;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{
+  padding:2rem 5%;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+footer p{font-size:.72rem;color:var(--subtle)}
+.footer-links{display:flex;gap:1.5rem}
+footer a{color:var(--muted);text-decoration:none;font-size:.72rem;transition:color .2s}
+footer a:hover{color:var(--text)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-label{animation:fadeUp .55s ease both .1s}
+h1.hero-name{animation:fadeUp .55s ease both .2s}
+.hero-tagline{animation:fadeUp .55s ease both .3s}
+.hero-desc{animation:fadeUp .55s ease both .4s}
+.hero-actions{animation:fadeUp .55s ease both .5s}
+.stats-bar{animation:fadeUp .55s ease both .6s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-item{grid-template-columns:1fr;gap:.5rem}
+  .exp-item::before{display:none}
+  .exp-date{text-align:left}
+  .exp-content{padding-left:0}
+  .exp-content::before{display:none}
+  .stats-bar{grid-template-columns:repeat(2,1fr);max-width:100%}
+  .edu-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .projects-grid{grid-template-columns:1fr}
+  nav{padding:1rem 4%}
+  section{padding:3.5rem 4%}
+  #hero{padding:7rem 4% 3rem}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">SS<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:sayan.saha1010@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-label">Product Manager &nbsp;·&nbsp; Mumbai, IN</div>
+  <h1 class="hero-name">Sayan<br><span>Saha</span></h1>
+  <p class="hero-tagline">AI-Enabled Platforms &nbsp;·&nbsp; MSME Lending &nbsp;·&nbsp; API Ecosystems</p>
+  <p class="hero-desc">
+    Building intelligent lending infrastructure at scale. 4+ years turning complex financial workflows
+    into seamless product experiences — from ₹600 Cr+ loan origination systems to agentic AI pipelines.
+  </p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View Projects →</a>
+    <a href="mailto:sayan.saha1010@gmail.com" class="btn-secondary">Get in Touch</a>
+  </div>
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-val">₹600<span>Cr+</span></div>
+      <div class="stat-label">Monthly Disbursements</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">40<span>+</span></div>
+      <div class="stat-label">Lender Integrations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">65<span>%</span></div>
+      <div class="stat-label">AI Effort Reduction</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">4<span>yr</span></div>
+      <div class="stat-label">Product Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <div class="section-line"></div>
+    <h2 class="section-title">About Me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a product manager with deep roots in software engineering, now building the next generation
+        of <strong>AI-enabled fintech infrastructure</strong>. My work sits at the intersection of
+        lending, intelligent automation, and API platform design — areas where I've spent four years
+        shipping products that actually move the needle.
+      </p>
+      <p>
+        At <strong>UGRO Capital</strong>, I own the product strategy for an MSME Loan Origination
+        System processing over ₹600 Crore in monthly disbursements. I've launched AI automation
+        pipelines, a zero-intervention secured lending vertical, and a centralized CRM — while
+        personally writing production automation code in Java SpringBoot.
+      </p>
+      <p>
+        Before UGRO, at <strong>Bajaj Finserv Direct</strong>, I led partner ecosystem expansion
+        from the ground up — integrating 40+ lenders, doubling Unsecured Loans revenue, and building
+        an API framework that cut go-to-market cycles by 30%.
+      </p>
+      <p>
+        I'm currently pursuing an <strong>MBA at IIM Shillong</strong> (Working Executive, 2025–27)
+        while working full-time. My current focus: <strong>agentic AI systems for lending</strong> —
+        products where intelligent agents handle document processing, underwriting support, and
+        decision orchestration end-to-end.
+      </p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <h4>🏛 MBA — IIM Shillong</h4>
+        <p>PGPEX Working Executive program (2025–27). Pursuing alongside a full-time Senior Manager role at UGRO Capital.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>🤖 AI-First Product Thinking</h4>
+        <p>Shipped production AI products using NLP, LangChain, and ML pipelines in live fintech lending environments.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>⚙️ Engineering Background</h4>
+        <p>B.Tech CS from VIT + SDE at Rebel Foods. PRDs engineers trust, specs that actually ship.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>📍 Mumbai · Open to Opportunities</h4>
+        <p>Senior PM / Lead PM roles in MSME lending, AI-enabled BFSI, and API-first fintech. Also open to fractional / consulting engagements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <div class="section-line"></div>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-date">
+        <div class="exp-date-label">Oct 2024 — Present</div>
+        <div class="exp-date-loc">Mumbai, MH</div>
+      </div>
+      <div class="exp-content">
+        <h3>Senior Manager — Business Solutions &amp; Product</h3>
+        <span class="exp-co-tag">UGRO Capital Ltd.</span>
+        <ul class="exp-bullets">
+          <li>Own roadmap and strategy for an <strong>AI-enabled MSME LOS</strong> processing ₹600 Cr+ in monthly disbursements, leading BAs and QAs across sprint planning, release management, and cross-functional delivery.</li>
+          <li>Spearheading an industry-first <strong>zero-intervention fully digital secured lending vertical</strong> with P&amp;L accountability, defining KPIs, unit economics, and launch milestones.</li>
+          <li>Launched <strong>AI-powered Personal Discussion automation</strong> converting recorded customer discussions into structured underwriting summaries — cutting analyst effort by 65%.</li>
+          <li>Designed centralized <strong>CRM platform</strong> covering call centre workflows, audit tracking, and portfolio dashboards; personally built Java SpringBoot automation utilities reducing overhead by 30 hours/week.</li>
+          <li>Engineered scalable <strong>document ingestion and validation pipeline</strong> with bulk submission, auto-triangulation, and KYC verification — reducing screening time by 35%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">
+        <div class="exp-date-label">Nov 2022 — Oct 2024</div>
+        <div class="exp-date-loc">Pune, MH</div>
+      </div>
+      <div class="exp-content">
+        <h3>Senior Product Owner</h3>
+        <span class="exp-co-tag">Bajaj Finserv Direct Limited</span>
+        <ul class="exp-bullets">
+          <li>Led <strong>partner ecosystem expansion</strong> in Unsecured Loans — integrated 40+ lenders, drove 2x+ revenue growth, and onboarded E2E disbursement modules at ₹80 Cr monthly run-rate.</li>
+          <li>Built a <strong>reusable API integration and journey configuration framework</strong> enabling low-code UI orchestration, shortening GTM cycles by 30%.</li>
+          <li>Spearheaded <strong>Account Aggregator and ONDC integrations</strong>; built real-time offer engine across 5 credit products, increasing loan conversion by 25%.</li>
+          <li>Owned end-to-end lifecycle for <strong>Tax Filing, Education Loans, and Gold Loans</strong> — from problem discovery and commercial structuring to API architecture, UX flows, and GTM rollout.</li>
+          <li>Collaborated with B2B function supporting <strong>5+ enterprise clients</strong> across solution workshops and capability advisory.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">
+        <div class="exp-date-label">Jul 2021 — Oct 2022</div>
+        <div class="exp-date-loc">Gurugram, Delhi NCR</div>
+      </div>
+      <div class="exp-content">
+        <h3>Software Development Engineer</h3>
+        <span class="exp-co-tag">Rebel Foods Pvt. Ltd.</span>
+        <ul class="exp-bullets">
+          <li>Developed <strong>CMS and OMS modules</strong> as part of a team rebuilding the storefront into a SaaS-based BD rental platform.</li>
+          <li>Built backend services and APIs supporting <strong>200,000+ daily orders</strong> across high-volume food processing workflows.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <div class="section-line"></div>
+    <h2 class="section-title">Projects</h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-01</span>
+        <span class="badge badge-live">Live Product</span>
+      </div>
+      <h3>AI-Enabled MSME Loan Origination System</h3>
+      <p>End-to-end LOS platform for MSME secured lending with intelligent workflow automation, digital credit decisioning, and modular API architecture. Drives a zero-intervention secured lending vertical with full P&amp;L accountability.</p>
+      <div class="project-metrics">
+        <div class="metric">₹600Cr+ <small>Monthly Volume</small></div>
+        <div class="metric">Zero-Touch <small>Secured Lending</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Product Strategy</span>
+        <span class="tag">AI / ML</span>
+        <span class="tag">LOS</span>
+        <span class="tag">MSME Lending</span>
+        <span class="tag">Figma</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-02</span>
+        <span class="badge badge-live">Live Product</span>
+      </div>
+      <h3>Personal Discussion Automation Engine</h3>
+      <p>NLP-powered system that converts recorded customer Personal Discussions into structured underwriting summaries. Eliminates manual transcription, improves documentation consistency, and accelerates credit decision turnaround.</p>
+      <div class="project-metrics">
+        <div class="metric">65% <small>Effort Reduction</small></div>
+        <div class="metric">NLP <small>Powered</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">NLP</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">Audio Processing</span>
+        <span class="tag">Underwriting AI</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-03</span>
+        <span class="badge badge-live">Live Product</span>
+      </div>
+      <h3>Intelligent Document Ingestion Pipeline</h3>
+      <p>Scalable document processing product with bulk submission, auto-triangulation across KYC data sources, and multi-format validation. Handles high-volume document submissions without incremental headcount, reducing screening time significantly.</p>
+      <div class="project-metrics">
+        <div class="metric">35% <small>Faster Screening</small></div>
+        <div class="metric">Auto <small>KYC Triangulation</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Document AI</span>
+        <span class="tag">KYC</span>
+        <span class="tag">API Architecture</span>
+        <span class="tag">Data Validation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-04</span>
+        <span class="badge badge-concept">Agentic AI</span>
+      </div>
+      <h3>MSME Credit Copilot — Agentic Underwriting Assistant</h3>
+      <p>Product specification and proof-of-concept for a multi-agent AI system assisting underwriters in MSME credit assessment. Agents independently retrieve financials, pull bureau data, generate risk summaries, and flag anomalies — with a human-in-the-loop approval layer.</p>
+      <div class="project-metrics">
+        <div class="metric">RAG <small>Architecture</small></div>
+        <div class="metric">Multi-Agent <small>Orchestration</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Agentic AI</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">RAG</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Product Design</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-05</span>
+        <span class="badge badge-concept">Agentic AI</span>
+      </div>
+      <h3>Agentic Loan Journey Orchestrator</h3>
+      <p>Proof-of-concept for an end-to-end agentic loan origination pipeline — document ingestion, identity verification, bureau pull, underwriting assessment, conditional sanction generation, and disbursement trigger — each stage handled by specialized AI agents coordinated via a central LangGraph orchestrator.</p>
+      <div class="project-metrics">
+        <div class="metric">End-to-End <small>Automation</small></div>
+        <div class="metric">5-Stage <small>Agent Pipeline</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Multi-Agent Systems</span>
+        <span class="tag">Python</span>
+        <span class="tag">OpenAI API</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Fintech</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-meta">
+        <span class="project-num">P-06</span>
+        <span class="badge badge-live">Live Product</span>
+      </div>
+      <h3>Lender API Integration &amp; Journey Configuration Framework</h3>
+      <p>Reusable API orchestration layer at Bajaj Finserv Direct enabling low-code journey configuration for new lender onboarding. Reduced incremental development cycles by 30% and enabled rapid GTM across Tax Filing, Education, and Gold Loan verticals.</p>
+      <div class="project-metrics">
+        <div class="metric">40+ <small>Lenders Integrated</small></div>
+        <div class="metric">30% <small>Faster GTM</small></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">API Architecture</span>
+        <span class="tag">Platform Productization</span>
+        <span class="tag">Low-Code Config</span>
+        <span class="tag">Fintech</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <div class="section-line"></div>
+    <h2 class="section-title">Skills</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Product Management</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Product Strategy</span>
+        <span class="skill-pill">Roadmapping</span>
+        <span class="skill-pill">OKRs &amp; KPIs</span>
+        <span class="skill-pill">Agile / Scrum</span>
+        <span class="skill-pill">Sprint Planning</span>
+        <span class="skill-pill">Go-to-Market</span>
+        <span class="skill-pill">User Research</span>
+        <span class="skill-pill">A/B Testing</span>
+        <span class="skill-pill">Stakeholder Management</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">AI &amp; Machine Learning</div>
+      <div class="skill-pills">
+        <span class="skill-pill">LangChain</span>
+        <span class="skill-pill">LangGraph</span>
+        <span class="skill-pill">NLP</span>
+        <span class="skill-pill">RAG Architecture</span>
+        <span class="skill-pill">Agentic Systems</span>
+        <span class="skill-pill">AI Productization</span>
+        <span class="skill-pill">OpenAI API</span>
+        <span class="skill-pill">Machine Learning</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Engineering &amp; Architecture</div>
+      <div class="skill-pills">
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">Microservices</span>
+        <span class="skill-pill">System Design</span>
+        <span class="skill-pill">Java / Spring Boot</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">Data Warehousing</span>
+        <span class="skill-pill">Git</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Design &amp; Analytics</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">Adobe XD</span>
+        <span class="skill-pill">UI/UX Design</span>
+        <span class="skill-pill">Wireframing</span>
+        <span class="skill-pill">Prototyping</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Partner Monetization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="border-top:1px solid var(--border)">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <div class="section-line"></div>
+    <h2 class="section-title">Education &amp; Awards</h2>
+  </div>
+  <div class="edu-grid" style="margin-bottom:2.5rem">
+    <div class="edu-card">
+      <div class="edu-degree">MBA — Working Executive (PGPEX)</div>
+      <div class="edu-school">IIM Shillong</div>
+      <div class="edu-year">June 2025 – Present · Pursuing alongside full-time work</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">B.Tech, Computer Science Engineering</div>
+      <div class="edu-school">VIT University, Vellore</div>
+      <div class="edu-year">July 2017 – August 2021</div>
+    </div>
+  </div>
+  <div class="awards-row">
+    <div class="award-pill">
+      <span class="award-icon">🏆</span>
+      <div class="award-text"><strong>COE Excellence Award</strong>UGRO Capital, 2025</div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">🏆</span>
+      <div class="award-text"><strong>CEO Choice Award</strong>Bajaj Finserv Direct, 2024</div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">💡</span>
+      <div class="award-text"><strong>Ideathon Winner</strong>Bajaj Finserv Direct, 2023</div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">📄</span>
+      <div class="award-text"><strong>ISB Applied Business Analytics Cert.</strong>Indian School of Business, 2024</div>
+    </div>
+    <div class="award-pill">
+      <span class="award-icon">📝</span>
+      <div class="award-text"><strong>Research Publication</strong>Emoji Prediction via ML Classifiers, 2021</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <h2>Let's build something<br>intelligent.</h2>
+    <p>Open to senior PM and lead PM roles in MSME lending, AI-enabled BFSI platforms, and API-first fintech. Also available for consulting and fractional PM engagements.</p>
+    <a href="mailto:sayan.saha1010@gmail.com" class="btn-primary">Say Hello →</a>
+    <div class="contact-links">
+      <a href="mailto:sayan.saha1010@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        sayan.saha1010@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/eyeSayanSaha" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/eyeSayanSaha
+      </a>
+      <a href="https://github.com/eyeSayanSaha" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+        github.com/eyeSayanSaha
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Sayan Saha · Mumbai, India</p>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/eyeSayanSaha" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/eyeSayanSaha" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:sayan.saha1010@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
